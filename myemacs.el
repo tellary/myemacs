@@ -11,3 +11,8 @@
 (setq eshell-review-quick-commands nil)
 (setq eshell-smart-space-goes-to-end t)
 (add-hook 'eshell-mode-hook 'eshell-smart-initialize)
+
+;; No menus as [Steve Yegge advices](https://sites.google.com/site/steveyegge2/effective-emacs)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
