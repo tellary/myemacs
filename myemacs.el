@@ -16,3 +16,8 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+;; Russian input method for dvorak layout
+;; Got from [here](http://www.emacswiki.org/emacs/WritingRussianWithDvorak)
+(load-file "~/.emacs.d/cyrillic-dvorak.el")
+(setq default-input-method "cyrillic-dvorak")
