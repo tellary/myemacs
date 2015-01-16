@@ -21,3 +21,11 @@
 ;; Got from [here](http://www.emacswiki.org/emacs/WritingRussianWithDvorak)
 (load-file "~/.emacs.d/cyrillic-dvorak.el")
 (setq default-input-method "cyrillic-dvorak")
+
+;; From [here](http://stackoverflow.com/a/27908343/1060693)
+(defun eshell/clear ()
+  "Clear terminal"
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)
+    (eshell-send-input)))
