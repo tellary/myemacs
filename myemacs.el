@@ -29,3 +29,9 @@
   (let ((inhibit-read-only t))
     (erase-buffer)
     (eshell-send-input)))
+
+
+;; [groovy-emacs-mode](http://groovy.codehaus.org/Emacs+Groovy+Mode).
+(load "~/.emacs.d/groovy-mode/groovy-mode.el")
+(add-to-list 'auto-mode-alist '("\\.gradle$" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.groovy$" . groovy-mode))
