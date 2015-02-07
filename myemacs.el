@@ -35,3 +35,10 @@
 (load "~/.emacs.d/groovy-mode/groovy-mode.el")
 (add-to-list 'auto-mode-alist '("\\.gradle$" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.groovy$" . groovy-mode))
+
+;; http://ergoemacs.org/emacs/emacs_package_system.html
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )
