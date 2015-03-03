@@ -42,3 +42,7 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
+
+;; Promised to be faster than the default `scp`
+;; as said [here](http://www.emacswiki.org/emacs/TrampMode)
+(setq tramp-default-method "ssh")
