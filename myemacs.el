@@ -51,3 +51,5 @@
 (load "~/.emacs.d/drools-mode.el")
 (add-to-list 'auto-mode-alist '("\\.drl$" . drools-mode))
 
+;; Make auto-revert mode quiet
+(setq auto-revert-verbose nil)
