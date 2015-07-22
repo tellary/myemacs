@@ -46,3 +46,8 @@
 ;; Promised to be faster than the default `scp`
 ;; as said [here](http://www.emacswiki.org/emacs/TrampMode)
 (setq tramp-default-method "ssh")
+
+;; http://thinkinghard.com/software/rules-editing-mode/index.html
+(load "~/.emacs.d/drools-mode.el")
+(add-to-list 'auto-mode-alist '("\\.drl$" . drools-mode))
+
