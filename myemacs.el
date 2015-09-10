@@ -60,3 +60,6 @@
             (interactive) 
             (column-marker-1 80)
             (column-marker-3 120)))
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
