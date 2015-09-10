@@ -53,3 +53,10 @@
 
 ;; Make auto-revert mode quiet
 (setq auto-revert-verbose nil)
+
+(require 'column-marker)
+(add-hook 'prog-mode-hook 
+          (lambda () 
+            (interactive) 
+            (column-marker-1 80)
+            (column-marker-3 120)))
