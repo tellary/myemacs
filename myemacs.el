@@ -1,4 +1,10 @@
+;; No noise from emacs
 (setq ring-bell-function 'ignore)
+
+;; Use java mode for Gosu files
+(add-to-list 'auto-mode-alist '("\\.gs$" . java-mode))
+
+(load-theme 'zenburn)
 
 ;; Browsing search history doesn't move to minibuffer to edit search string
 (setq search-ring-update t)
@@ -65,3 +71,5 @@
 (setq-default tab-width 4)
 
 (setq column-number-mode t)
+
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
