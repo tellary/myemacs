@@ -38,7 +38,6 @@
 
 
 ;; [groovy-emacs-mode](http://groovy.codehaus.org/Emacs+Groovy+Mode).
-(load "~/.emacs.d/groovy-mode/groovy-mode.el")
 (add-to-list 'auto-mode-alist '("\\.gradle$" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.groovy$" . groovy-mode))
 
@@ -73,3 +72,5 @@
 (setq column-number-mode t)
 
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+
+(setq c-basic-offset 4)
