@@ -68,6 +68,8 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+(setq-default nxml-child-indent 4)
+(setq-default nxml-attribute-indent 8)
 
 (setq column-number-mode t)
 
