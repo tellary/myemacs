@@ -76,3 +76,7 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 
 (setq c-basic-offset 4)
+
+(add-hook 'haskell-mode-hook
+          (lambda()
+            (haskell-indentation-mode)))
