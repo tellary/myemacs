@@ -80,3 +80,6 @@
 (add-hook 'haskell-mode-hook
           (lambda()
             (haskell-indentation-mode)))
+
+(setq dabbrev-case-replace case-replace)
+(setq dabbrev-case-distinction nil)
