@@ -83,3 +83,10 @@
 
 (setq dabbrev-case-replace case-replace)
 (setq dabbrev-case-distinction nil)
+
+;; Set it to nil to halt display redraw if any input event is detected.
+;; This is an "old" performance optimization irrelevant
+;; this days as described 
+;; [here](https://www.masteringemacs.org/article/improving-performance-emacs-display-engine),
+;; but I still want to use it.
+(setq redisplay-dont-pause nil)
