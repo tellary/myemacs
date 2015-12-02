@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: setter
+# key: set
+# --
+public void set${2:$(upcase-initials yas-text)}(${1:String} $2) {
+       return this.${2:field};$0
+}
