@@ -90,3 +90,7 @@
 ;; [here](https://www.masteringemacs.org/article/improving-performance-emacs-display-engine),
 ;; but I still want to use it.
 (setq redisplay-dont-pause nil)
+
+;; Indent long arguments properly
+;; http://stackoverflow.com/a/6952408/1060693
+(c-set-offset 'arglist-intro '+)
