@@ -94,3 +94,45 @@
 ;; Indent long arguments properly
 ;; http://stackoverflow.com/a/6952408/1060693
 (c-set-offset 'arglist-intro '+)
+
+
+;; Copied from [github](https://github.com/atomontage/xterm-color)
+;; from commit 1bc4ddb0e1bf7562cbf4b6b3bdd2ce3f9b596b39
+(load "xterm-color")
+;; Setup somewhat zenburn colors for xterm-colors
+(setq xterm-color-names
+  ["#192033"    ; black
+   "#E89393"    ; red
+   "#9ECE9E"    ; green
+   "#F0DFAF"    ; yellow
+   "#8CD0D3"    ; blue
+   "#C0BED1"    ; magenta
+   "#DFAF8F"    ; cyan
+   "#EFEFEF"]   ; white
+  )
+(setq xterm-color-names-bright
+  ["#192033"    ; black
+   "#E89393"    ; red
+   "#9ECE9E"    ; green
+   "#F0DFAF"    ; yellow
+   "#8CD0D3"    ; blue
+   "#C0BED1"    ; magenta
+   "#DFAF8F"    ; cyan
+   "#EFEFEF"]   ; white
+  )
+
+;; comint install
+(progn (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
+       (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
+       (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))
+
+;; You can also use it with eshell (and thus get color output from system ls):
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (setq xterm-color-preserve-properties t)))
+
+(add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
+(setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
+
+;; A workaround as emacs sets to "dumb" in `normal-top-level` function
+(add-hook 'eshell-mode-hook (lambda() (setenv "TERM" "xterm-256color")))
