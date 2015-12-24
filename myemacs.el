@@ -136,3 +136,7 @@
 
 ;; A workaround as emacs sets to "dumb" in `normal-top-level` function
 (add-hook 'eshell-mode-hook (lambda() (setenv "TERM" "xterm-256color")))
+
+(require 'yasnippet)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
