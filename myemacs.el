@@ -140,3 +140,10 @@
 (require 'yasnippet)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (setq eshell-command-aliases-list 
+                  (cons
+                   '("gradle" "TERM=dumb gradle $*")
+                   eshell-command-aliases-list))))
