@@ -140,6 +140,7 @@
 (require 'yasnippet)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+(setq yas-snippet-dirs nil)
 
 (add-hook 'eshell-mode-hook
           (lambda ()
@@ -147,3 +148,12 @@
                   (cons
                    '("gradle" "TERM=dumb gradle $*")
                    eshell-command-aliases-list))))
+
+(defun set-window-width (n)
+  "Set the selected window's width."
+  (window-resize (selected-window) (- n (window-width)) t))
+
+(defun set-80-columns ()
+  "Set the selected window to 80 columns."
+  (interactive)
+  (set-window-width 80))
