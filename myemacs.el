@@ -157,3 +157,6 @@
   "Set the selected window to 80 columns."
   (interactive)
   (set-window-width 80))
+
+(add-to-list 'yank-excluded-properties 'xterm-color)
+(add-to-list 'yank-excluded-properties 'face)
