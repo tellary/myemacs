@@ -160,3 +160,15 @@
 
 (add-to-list 'yank-excluded-properties 'xterm-color)
 (add-to-list 'yank-excluded-properties 'face)
+
+(defun main-frame-27-inch()
+  (interactive)
+  (set-frame-font "Monospace 14"))
+(defun second-frame-27-inch ()
+  (interactive)
+  (let ((f (make-frame)))
+    (set-frame-font "Monospace 14" nil (list f))))
+(defun second-frame-24-inch ()
+  (interactive)
+  (let ((f (make-frame)))
+    (set-frame-font "Monospace 12" nil (list f))))
