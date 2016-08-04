@@ -179,3 +179,7 @@
   (interactive)
   (let ((f (make-frame)))
     (set-face-attribute 'default f :height 150)))
+
+(defun clear-colors ()
+    (interactive)
+    (remove-text-properties (region-beginning) (region-end) '(xterm-color nil face nil)))
