@@ -183,3 +183,22 @@
 (defun clear-colors ()
     (interactive)
     (remove-text-properties (region-beginning) (region-end) '(xterm-color nil face nil)))
+
+(defun quote-line-break ()
+  "Function to split pasted text into lines with quotation on tokens found"
+  (interactive)
+  (let* (
+        (linestart (eq (point) (line-beginning-position)))
+        (emptyline (and linestart (eq (point) (line-end-position)))))
+    (if emptyline
+        (progn
+          (insert "> ")
+          (next-line)
+          (beginning-of-line)
+          (quote-line-break))
+      (unless linestart
+        (unless (eq (char-before) (string-to-char " "))
+            (backward-word))
+        (newline)))
+    (insert "> ")))
+
