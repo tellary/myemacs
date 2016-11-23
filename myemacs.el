@@ -199,6 +199,6 @@
       (unless linestart
         (unless (eq (char-before) (string-to-char " "))
             (backward-word))
-        (newline)))
-    (insert "> ")))
+        (newline))
+      (insert "> "))))
 
