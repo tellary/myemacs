@@ -167,7 +167,8 @@
 (defun second-frame-27-inch ()
   (interactive)
   (let ((f (make-frame)))
-    (set-frame-font "Monospace 14" nil (list f))))
+    (set-frame-font "Monospace 14" nil (list f))
+    f))
 (defun second-frame-24-inch ()
   (interactive)
   (let ((f (make-frame)))
@@ -201,4 +202,14 @@
             (backward-word))
         (newline))
       (insert "> "))))
+
+(defun add-tags (dir)
+  (add-to-list 'tags-table-list dir))
+
+(defun new-eshell (name dir)
+  (let (d default-directory)
+    (cd dir)
+  (eshell)
+  (rename-buffer name)
+  (unless (not d) (cd d))))
 
