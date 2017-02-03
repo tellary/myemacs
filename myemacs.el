@@ -4,7 +4,7 @@
 ;; Use java mode for Gosu files
 (add-to-list 'auto-mode-alist '("\\.gs$" . java-mode))
 
-(load-theme 'zenburn)
+(load-theme 'zenburn t)
 
 ;; Browsing search history doesn't move to minibuffer to edit search string
 (setq search-ring-update t)
@@ -42,11 +42,11 @@
 (add-to-list 'auto-mode-alist '("\\.groovy$" . groovy-mode))
 
 ;; http://ergoemacs.org/emacs/emacs_package_system.html
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  )
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
 
 ;; Promised to be faster than the default `scp`
 ;; as said [here](http://www.emacswiki.org/emacs/TrampMode)
@@ -59,6 +59,7 @@
 ;; Make auto-revert mode quiet
 (setq auto-revert-verbose nil)
 
+(package-install 'column-marker)
 (require 'column-marker)
 (add-hook 'prog-mode-hook 
           (lambda () 
@@ -137,6 +138,7 @@
 ;; A workaround as emacs sets to "dumb" in `normal-top-level` function
 (add-hook 'eshell-mode-hook (lambda() (setenv "TERM" "xterm-256color")))
 
+(package-install 'yasnippet)
 (require 'yasnippet)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
