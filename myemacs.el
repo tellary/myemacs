@@ -215,3 +215,9 @@
   (rename-buffer name)
   (unless (not d) (cd d))))
 
+(package-install 'markdown-mode)
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(define-key markdown-mode-map "\t" 'indent-relative)
+(define-key markdown-mode-map "\M-\r" 'markdown-insert-list-item)
+
