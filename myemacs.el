@@ -221,3 +221,11 @@
 (define-key markdown-mode-map "\t" 'indent-relative)
 (define-key markdown-mode-map "\M-\r" 'markdown-insert-list-item)
 
+(package-install 'dockerfile-mode)
+
+(put 'upcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
+
+;; The LANG variable is necessary to let hunspell know
+;; a dictionary to use as default.
+(setenv "LANG" "en_US")
