@@ -220,6 +220,10 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (define-key markdown-mode-map "\t" 'indent-relative)
 (define-key markdown-mode-map "\M-\r" 'markdown-insert-list-item)
+(add-hook 'markdown-mode-hook
+          (lambda()
+            (setq comment-start "> ")
+            (setq comment-end "")))
 
 (package-install 'dockerfile-mode)
 
