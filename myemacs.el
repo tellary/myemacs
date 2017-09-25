@@ -233,3 +233,15 @@
 ;; The LANG variable is necessary to let hunspell know
 ;; a dictionary to use as default.
 (setenv "LANG" "en_US")
+
+(setenv "SHELL" "/bin/bash")
+
+;; Enable xclip support
+(package-install 'xclip)
+(xclip-mode)
+(turn-on-xclip)
+
+(package-install 'haskell-mode)
+(package-install 'haskell-snippets)
+
+(org-mode)
