@@ -140,9 +140,14 @@
 
 (package-install 'yasnippet)
 (require 'yasnippet)
+(add-hook 'prog-mode-hook 'yas-minor-mode)
+(setq yas-snippet-dirs
+      (list
+       (concat
+        (file-name-directory load-file-name)
+        "snippets")
+       yas-installed-snippets-dir))
 (yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
-(setq yas-snippet-dirs nil)
 
 (add-hook 'eshell-mode-hook
           (lambda ()
