@@ -225,10 +225,16 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (define-key markdown-mode-map "\t" 'indent-relative)
 (define-key markdown-mode-map "\M-\r" 'markdown-insert-list-item)
+;; Making `comment-style` buffer local by supplying `t`
+;; to the `LOCAL` argument of `add-hook` doesn`t work.
+;; The hook isn't executed then.
 (add-hook 'markdown-mode-hook
           (lambda()
-            (setq comment-start "> ")
-            (setq comment-end "")))
+            (setq comment-start ">")
+            (setq comment-end ">")
+            (setq comment-continue ">")
+            (make-local-variable 'comment-style)
+            (setq comment-style 'extra-line)))
 
 (package-install 'dockerfile-mode)
 
