@@ -256,3 +256,6 @@
 (package-install 'haskell-snippets)
 
 (org-mode)
+
+(package-install 'groovy-mode)
+(package-install 'gradle-mode)
