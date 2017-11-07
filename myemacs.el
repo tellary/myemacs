@@ -267,3 +267,5 @@
 (package-install 'nodejs-repl)
 
 (package-install 'typescript-mode)
+
+(package-install 'etags-select)
