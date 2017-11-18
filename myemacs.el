@@ -250,7 +250,6 @@
 ;; Enable xclip support
 (package-install 'xclip)
 (xclip-mode)
-(turn-on-xclip)
 
 (package-install 'haskell-mode)
 (package-install 'haskell-snippets)
