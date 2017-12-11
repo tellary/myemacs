@@ -268,3 +268,10 @@
 (package-install 'typescript-mode)
 
 (package-install 'etags-select)
+
+(package-install 'purescript-mode)
+
+;; As suggested [here](https://github.com/epost/psc-ide-emacs/issues/60#issuecomment-228606407)
+(add-hook 'purescript-mode-hook
+ (lambda ()
+  (turn-on-purescript-indentation)))
