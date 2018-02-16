@@ -59,8 +59,7 @@
 ;; Make auto-revert mode quiet
 (setq auto-revert-verbose nil)
 
-(package-install 'column-marker)
-(require 'column-marker)
+(load "column-marker")
 (add-hook 'prog-mode-hook 
           (lambda () 
             (interactive) 
@@ -256,6 +255,8 @@
 
 (org-mode)
 
+(load "etags-select")
+
 (package-install 'groovy-mode)
 (package-install 'gradle-mode)
 
@@ -266,8 +267,6 @@
 (package-install 'nodejs-repl)
 
 (package-install 'typescript-mode)
-
-(package-install 'etags-select)
 
 (package-install 'purescript-mode)
 
