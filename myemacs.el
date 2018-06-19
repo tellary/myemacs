@@ -275,3 +275,5 @@
 (add-hook 'purescript-mode-hook
  (lambda ()
   (turn-on-purescript-indentation)))
+
+(setq compilation-ask-about-save nil)
