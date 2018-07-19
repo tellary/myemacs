@@ -277,3 +277,5 @@
   (turn-on-purescript-indentation)))
 
 (setq compilation-ask-about-save nil)
+
+(add-to-list 'auto-mode-alist '("\\.libsonnet\\'" . jsonnet-mode))
