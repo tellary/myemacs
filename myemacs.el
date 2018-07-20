@@ -279,3 +279,34 @@
 (setq compilation-ask-about-save nil)
 
 (add-to-list 'auto-mode-alist '("\\.libsonnet\\'" . jsonnet-mode))
+
+
+(defun copy-file-name-to-clipboard--filename (full-filename copy-full-path)
+  (when full-filename
+    (if copy-full-path full-filename
+      (if (equal "/" (substring full-filename -1))
+          (file-name-nondirectory (substring full-filename 0 -1))
+        (file-name-nondirectory full-filename)
+        )
+      )
+    )
+  )
+
+;; Derived
+;; [here](http://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/)
+(defun copy-filename (arg)
+  "Copy the current buffer file name to the clipboard."
+  (interactive "P")
+  (let ((copy-full-path arg)
+        (full-filename
+         (if (member major-mode '(dired-mode eshell-mode shell-mode))
+             default-directory
+           (buffer-file-name))))
+    (let ((filename (copy-file-name-to-clipboard--filename
+                     full-filename copy-full-path)))
+      (when filename
+        (kill-new filename)
+        (message
+         "Copied buffer file name '%s' to the clipboard." filename)))
+    )
+  )
