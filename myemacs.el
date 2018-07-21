@@ -310,3 +310,5 @@
          "Copied buffer file name '%s' to the clipboard." filename)))
     )
   )
+
+(defalias 'cpfn 'copy-filename)
