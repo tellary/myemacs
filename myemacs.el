@@ -312,3 +312,19 @@
   )
 
 (defalias 'cpfn 'copy-filename)
+
+; Emacs workspace (ws-*) functions
+(defun ws-open-eshell (buffer-name location)
+  (if (not (get-buffer buffer-name))
+      (progn
+        (eshell)
+        (insert location)
+        (eshell-send-input)
+        (rename-buffer buffer-name))))
+
+(defun ws-project (buffer-name location)
+  (ws-open-eshell buffer-name location)
+  (let ((file (concat location "/TAGS")))
+    (and
+     (file-exists-p file)
+     (visit-tags-table-buffer file))))
