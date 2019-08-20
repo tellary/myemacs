@@ -151,10 +151,12 @@
 
 (add-hook 'eshell-mode-hook
           (lambda ()
-            (setq eshell-command-aliases-list 
-                  (cons
-                   '("gradle" "TERM=dumb gradle $*")
-                   eshell-command-aliases-list))))
+            (add-to-list
+             'eshell-command-aliases-list
+             '("gradle" "TERM=dumb gradle $*"))
+            (add-to-list
+             'eshell-command-aliases-list
+             '("./gradlew" "TERM=dumb ./gradlew $*"))))
 
 (defun set-window-width (n)
   "Set the selected window's width."
