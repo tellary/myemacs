@@ -330,3 +330,15 @@
     (and
      (file-exists-p file)
      (visit-tags-table-buffer file))))
+
+; Doing this, because `package-install` stopped working
+(let ((php-mode-autoloads (concat
+                           (file-name-directory load-file-name)
+                           "php-mode/php-mode-autoloads.el")))
+  (if (file-exists-p php-mode-autoloads)
+      (load php-mode-autoloads)
+    (error "Init 'php-mode' submodule and run 'make'")
+    )
+  )
+
+
