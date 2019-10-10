@@ -50,7 +50,7 @@
   :group 'languages)
 
 (defcustom puml-plantuml-jar-path
-  (expand-file-name "~/plantuml.jar")
+  (expand-file-name "/usr/local/bin/plantuml.jar")
   "The location of the PlantUML executable JAR.")
 
 (defcustom puml-suppress-deprecation-warning t "To silence the deprecation warning when `puml-mode' is found upon loading.")
@@ -306,17 +306,6 @@ Shortcuts             Command Name
 
   ; Run hooks:
   (run-mode-hooks 'puml-mode-hook))
-
-(defun puml-deprecation-warning ()
-  "Warns the user about the deprecation of the `puml-mode' project."
-  (if (and puml-suppress-deprecation-warning
-           (featurep 'puml-mode))
-      (display-warning :warning
-                       "`puml-mode' is now deprecated and no longer updated, but it's still present in your system.\
-You should move your configuration to use `plantuml-mode'. See https://github.com/sytac/plantuml-mode. \
-See more at https://github.com/skuro/puml-mode/issues/26")))
-
-(add-hook 'puml-mode-hook 'puml-deprecation-warning)
 
 (provide 'puml-mode)
 ;;; puml-mode.el ends here
