@@ -325,11 +325,17 @@
         (rename-buffer buffer-name))))
 
 (defun ws-project (buffer-name location)
+  (message "ws-project %s %s" buffer-name location)
   (ws-open-eshell buffer-name location)
   (let ((file (concat location "/TAGS")))
     (and
      (file-exists-p file)
      (visit-tags-table-buffer file))))
+
+(defun ws-visit-tags-table (f)
+  (message "ws-visit-tags-table %s" f)
+  (visit-tags-table f)
+  )
 
 ; Doing this, because `package-install` stopped working
 (let ((php-mode-autoloads (concat
