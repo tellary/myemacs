@@ -354,3 +354,6 @@
 ;; Using a deprecated one as it supports Emacs 24
 (load "puml-mode")
 (add-to-list 'auto-mode-alist '("\\.pu$" . puml-mode))
+
+(load "tasktags/stream.el")
+(load "tasktags/task-tags-mode.el")
