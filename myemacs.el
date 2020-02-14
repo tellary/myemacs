@@ -355,5 +355,4 @@
 (load "puml-mode")
 (add-to-list 'auto-mode-alist '("\\.pu$" . puml-mode))
 
-(load "tasktags/stream.el")
 (load "tasktags/task-tags-mode.el")
