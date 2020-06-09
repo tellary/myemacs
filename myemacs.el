@@ -246,6 +246,20 @@
 ;; The LANG variable is necessary to let hunspell know
 ;; a dictionary to use as default.
 (setenv "LANG" "en_US")
+(setq ispell-program-name "hunspell")
+
+;; Dirty hacks to init dictionaries manually
+(setq ispell-local-dictionary "english")
+(setq ispell-local-dictionary-alist
+      '(("english" "[[:alpha:]]" "[^[:alpha:]]" "[']"
+         nil ("-d" "en_US") nil utf-8)
+        ("russian" "[А-Яа-я]" "[^А-Яа-я]" "[']"
+         nil ("-d" "ru_RU") nil utf-8)
+        ))
+(condition-case nil
+    (ispell-change-dictionary "english")
+  (error nil))
+
 
 (setenv "SHELL" "/bin/bash")
 
@@ -346,7 +360,6 @@
     (error "Init 'php-mode' submodule and run 'make'")
     )
   )
-
 
 (setq haskell-interactive-popup-errors nil)
 
