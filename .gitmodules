@@ -4,3 +4,6 @@
 [submodule "tasktags"]
 	path = tasktags
 	url = git@github.com:tellary/tasktags.git
+[submodule "meta-bindings"]
+	path = meta-bindings
+	url = git@github.com:tellary/meta-bindings.git

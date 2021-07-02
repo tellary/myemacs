@@ -4,7 +4,11 @@
 ;; Use java mode for Gosu files
 (add-to-list 'auto-mode-alist '("\\.gs$" . java-mode))
 
+(setq myemacs-dir (file-name-directory load-file-name))
+(add-to-list 'custom-theme-load-path myemacs-dir)
 (load-theme 'zenburn t)
+
+(load "meta-bindings/meta-bindings")
 
 ;; Browsing search history doesn't move to minibuffer to edit search string
 (setq search-ring-update t)
@@ -25,7 +29,7 @@
 
 ;; Russian input method for dvorak layout
 ;; Got from [here](http://www.emacswiki.org/emacs/WritingRussianWithDvorak)
-(load-file "~/.emacs.d/cyrillic-dvorak.el")
+(load "cyrillic-dvorak")
 (setq default-input-method "cyrillic-dvorak")
 
 ;; From [here](http://stackoverflow.com/a/27908343/1060693)
@@ -54,7 +58,7 @@
 (setq tramp-default-method "ssh")
 
 ;; http://thinkinghard.com/software/rules-editing-mode/index.html
-(load "~/.emacs.d/drools-mode.el")
+(load "drools-mode")
 (add-to-list 'auto-mode-alist '("\\.drl$" . drools-mode))
 
 ;; Make auto-revert mode quiet
