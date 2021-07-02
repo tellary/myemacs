@@ -3,7 +3,7 @@
 	url = https://github.com/emacs-php/php-mode.git
 [submodule "tasktags"]
 	path = tasktags
-	url = git@github.com:tellary/tasktags.git
+	url = https://github.com/tellary/tasktags.git
 [submodule "meta-bindings"]
 	path = meta-bindings
-	url = git@github.com:tellary/meta-bindings.git
+	url = https://github.com/tellary/meta-bindings.git
