@@ -241,6 +241,9 @@
             (setq comment-continue ">")
             (make-local-variable 'comment-style)
             (setq comment-style 'extra-line)))
+(add-hook 'markdown-mode-hook
+          (lambda()
+            (visual-line-mode)))
 
 (package-install 'dockerfile-mode)
 
