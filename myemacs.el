@@ -376,3 +376,5 @@
 (add-to-list 'auto-mode-alist '("\\.pu$" . puml-mode))
 
 (load "tasktags/task-tags-mode.el")
+
+(server-start)
