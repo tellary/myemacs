@@ -226,7 +226,7 @@
   (rename-buffer name)
   (unless (not d) (cd d))))
 
-(package-install 'markdown-mode)
+; (package-install 'markdown-mode)
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (define-key markdown-mode-map "\t" 'indent-relative)
@@ -252,7 +252,7 @@
 
 ;; The LANG variable is necessary to let hunspell know
 ;; a dictionary to use as default.
-(setenv "LANG" "en_US")
+(setenv "LANG" "en_US.UTF-8")
 (setq ispell-program-name "hunspell")
 
 ;; Dirty hacks to init dictionaries manually
