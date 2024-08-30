@@ -380,3 +380,5 @@
 (load "tasktags/task-tags-mode.el")
 
 (server-start)
+
+(setenv "PAGER" "cat")
