@@ -226,7 +226,7 @@
   (rename-buffer name)
   (unless (not d) (cd d))))
 
-; (package-install 'markdown-mode)
+(package-install 'markdown-mode)
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (define-key markdown-mode-map "\t" 'indent-relative)
@@ -364,7 +364,9 @@
                            "php-mode/php-mode-autoloads.el")))
   (if (file-exists-p php-mode-autoloads)
       (load php-mode-autoloads)
-    (error "Init 'php-mode' submodule and run 'make'")
+    (error
+     (format "Git Init 'php-mode' submodule and run 'make'. %s file doesn't exist"
+             php-mode-autoloads))
     )
   )
 
