@@ -1,3 +1,4 @@
+(setenv "TERM" "dumb")
 ;; No noise from emacs
 (setq ring-bell-function 'ignore)
 
