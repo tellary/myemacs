@@ -5,6 +5,12 @@
 ;; Use java mode for Gosu files
 (add-to-list 'auto-mode-alist '("\\.gs$" . java-mode))
 
+(defun my-indent-setup ()
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'arglist-close nil)
+  )
+(add-hook 'java-mode-hook 'my-indent-setup)
+
 (setq myemacs-dir (file-name-directory load-file-name))
 (add-to-list 'custom-theme-load-path myemacs-dir)
 (load-theme 'zenburn t)
