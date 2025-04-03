@@ -383,6 +383,16 @@
 
 (setq haskell-interactive-popup-errors nil)
 
+(use-package daml-mode
+  :mode "\\.daml\'"
+  :config
+  (require 'lsp-daml)
+  )
+(require 'daml-mode)
+(add-hook 'daml-mode-hook
+          (lambda ()
+            (display-line-numbers-mode)))
+
 ;; https://github.com/skuro/puml-mode
 ;; Using a deprecated one as it supports Emacs 24
 (load "puml-mode")
