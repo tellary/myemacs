@@ -8,6 +8,10 @@
 (defun my-indent-setup ()
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close nil)
+  (c-set-offset 'case-label '+)
+  (c-set-offset 'arglist-cont-nonempty '+)
+  (c-set-offset 'topmost-intro-cont '++)
+  (c-set-offset 'statement-cont '+)
   )
 (add-hook 'java-mode-hook 'my-indent-setup)
 
