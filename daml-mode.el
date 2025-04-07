@@ -10,7 +10,9 @@
 (require 'cl-lib)
 
 (defcustom daml-font-lock-keywords
-  '("template" "ensure" "daml" "observer" "signatory" "agreement" "controller" "can" "nonconsuming" "return" "with" "mwith")
+  '("template" "ensure" "daml" "observer" "signatory"
+    "agreement" "controller" "can" "nonconsuming" "return"
+    "with" "mwith" "key" "maintainers")
   "Identifiers treated as reserved keywords in DAML and are not keywords for Haskell."
   :group 'daml
   :type '(repeat string))
