@@ -395,6 +395,9 @@
           (lambda ()
             (display-line-numbers-mode)))
 
+(package-install 'avy)
+(require 'avy)
+
 ;; https://github.com/skuro/puml-mode
 ;; Using a deprecated one as it supports Emacs 24
 (load "puml-mode")
