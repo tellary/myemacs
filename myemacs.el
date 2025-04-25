@@ -406,5 +406,6 @@
 (load "tasktags/task-tags-mode.el")
 
 (server-start)
+(setenv "EDITOR" (concat "emacsclient -s " server-socket-dir "/server"))
 
 (setenv "PAGER" "cat")
