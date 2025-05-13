@@ -153,7 +153,6 @@
 ;; A workaround as emacs sets to "dumb" in `normal-top-level` function
 (add-hook 'eshell-mode-hook (lambda() (setenv "TERM" "xterm-256color")))
 
-(package-install 'yasnippet)
 (require 'yasnippet)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 (setq yas-snippet-dirs
@@ -237,7 +236,6 @@
   (rename-buffer name)
   (unless (not d) (cd d))))
 
-(package-install 'markdown-mode)
 (require 'markdown-mode)
 (add-hook 'markdown-mode-hook
           (lambda () (yas-minor-mode)))
@@ -257,8 +255,6 @@
 (add-hook 'markdown-mode-hook
           (lambda()
             (visual-line-mode)))
-
-(package-install 'dockerfile-mode)
 
 (put 'upcase-region 'disabled nil)
 (put 'erase-buffer 'disabled nil)
@@ -284,11 +280,7 @@
 (setenv "SHELL" "/bin/bash")
 
 ;; Enable xclip support
-(package-install 'xclip)
 (xclip-mode)
-
-(package-install 'haskell-mode)
-(package-install 'haskell-snippets)
 
 (org-mode)
 
@@ -395,7 +387,6 @@
           (lambda ()
             (display-line-numbers-mode)))
 
-(package-install 'avy)
 (require 'avy)
 
 ;; https://github.com/skuro/puml-mode
