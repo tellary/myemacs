@@ -400,6 +400,8 @@
 (setenv "EDITOR" (concat "emacsclient -s " server-socket-dir "/server"))
 
 (setq-default fill-column 80)
-(setq grep-command "git grep --color=auto -nH -e ")
+(require 'grep)
+(grep-apply-setting 'grep-command "git grep --color=auto -nH -e ")
+(grep-apply-setting 'grep-use-null-device nil)
 
 (setenv "PAGER" "cat")
