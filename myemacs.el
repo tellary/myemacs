@@ -111,44 +111,20 @@
 ;; http://stackoverflow.com/a/6952408/1060693
 (c-set-offset 'arglist-intro '+)
 
+(require 'ansi-color)
 
-;; Copied from [github](https://github.com/atomontage/xterm-color)
-;; from commit 1bc4ddb0e1bf7562cbf4b6b3bdd2ce3f9b596b39
-(load "xterm-color")
-;; Setup somewhat zenburn colors for xterm-colors
-(setq xterm-color-names
-  ["#192033"    ; black
-   "#E89393"    ; red
-   "#9ECE9E"    ; green
-   "#F0DFAF"    ; yellow
-   "#8CD0D3"    ; blue
-   "#C0BED1"    ; magenta
-   "#DFAF8F"    ; cyan
-   "#EFEFEF"]   ; white
-  )
-(setq xterm-color-names-bright
-  ["#192033"    ; black
-   "#E89393"    ; red
-   "#9ECE9E"    ; green
-   "#F0DFAF"    ; yellow
-   "#8CD0D3"    ; blue
-   "#C0BED1"    ; magenta
-   "#DFAF8F"    ; cyan
-   "#EFEFEF"]   ; white
-  )
+;; Setup somewhat zenburn colors for ansi-colors
+(face-spec-set 'ansi-color-black '((t :foreground "#192033" :background "#192033")))
+(face-spec-set 'ansi-color-red '((t :foreground "#E89393" :background "#E89393")))
+(face-spec-set 'ansi-color-green '((t :foreground "#9ECE9E" :background "#9ECE9E")))
+(face-spec-set 'ansi-color-yellow '((t :foreground "#F0DFAF" :background "#F0DFAF")))
+(face-spec-set 'ansi-color-blue '((t :foreground "#8CD0D3" :background "#8CD0D3")))
+(face-spec-set 'ansi-color-magenta '((t :foreground "#C0BED1" :background "#C0BED1")))
+(face-spec-set 'ansi-color-cyan '((t :foreground "#DFAF8F" :background "#DFAF8F")))
+(face-spec-set 'ansi-color-white '((t :foreground "#EFEFEF" :background "#EFEFEF")))
 
-;; comint install
-(progn (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
-       (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
-       (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))
-
-;; You can also use it with eshell (and thus get color output from system ls):
-(add-hook 'eshell-mode-hook
-          (lambda ()
-            (setq xterm-color-preserve-properties t)))
-
-(add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
-(setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
+(add-hook 'comint-preoutput-filter-functions 'ansi-color-apply)
+(add-hook 'eshell-preoutput-filter-functions  'ansi-color-apply)
 
 ;; A workaround as emacs sets to "dumb" in `normal-top-level` function
 (add-hook 'eshell-mode-hook (lambda() (setenv "TERM" "xterm-256color")))
