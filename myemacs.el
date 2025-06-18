@@ -125,6 +125,7 @@
 
 (add-hook 'comint-preoutput-filter-functions 'ansi-color-apply)
 (add-hook 'eshell-preoutput-filter-functions  'ansi-color-apply)
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 ;; A workaround as emacs sets to "dumb" in `normal-top-level` function
 (add-hook 'eshell-mode-hook (lambda() (setenv "TERM" "xterm-256color")))
