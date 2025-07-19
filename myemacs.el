@@ -360,7 +360,8 @@
   (require 'lsp-daml)
   )
 (require 'daml-mode)
-(add-hook 'daml-mode-hook
+
+(add-hook 'prog-mode-hook
           (lambda ()
             (display-line-numbers-mode)))
 
