@@ -360,6 +360,9 @@
   (require 'lsp-daml)
   )
 (require 'daml-mode)
+(add-hook 'daml-mode-hook
+          (lambda ()
+            (setq lsp-enable-file-watchers nil)))
 
 (add-hook 'prog-mode-hook
           (lambda ()
