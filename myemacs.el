@@ -14,6 +14,9 @@
   (c-set-offset 'statement-cont '+)
   )
 (add-hook 'java-mode-hook 'my-indent-setup)
+(add-hook 'java-mode-hook
+          (lambda ()
+            (require 'my-lsp-java)))
 
 (setq myemacs-dir (file-name-directory load-file-name))
 (add-to-list 'custom-theme-load-path myemacs-dir)

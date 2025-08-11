@@ -10,6 +10,8 @@
     )
   )
 
+;; Copy of `lsp-register-client` from `lsp-java` that uses `my-lsp-java--locate-server-command`.
+;; Never tries to install anything -- just uses pre-installed jdtls.
 (lsp-register-client
  (make-lsp--client
   :new-connection (lsp-stdio-connection #'my-lsp-java--locate-server-command)
